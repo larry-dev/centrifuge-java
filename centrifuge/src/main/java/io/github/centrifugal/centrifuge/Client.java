@@ -675,7 +675,7 @@ public class Client {
                     sub.getListener().onPublish(sub, event);
                 }else if(this.serverSide.containsKey(channel)){
                     MessageEvent event = new MessageEvent();
-                    event.setData(push.getData().toByteArray());
+                    event.setData(pub.getData().toByteArray());
                     this.serverSide.get(channel).onMessage(this,event);
                 }
             } else if (push.getType() == Protocol.PushType.JOIN) {
